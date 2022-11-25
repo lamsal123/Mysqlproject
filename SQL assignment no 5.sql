@@ -32,10 +32,10 @@ SELECT * FROM classicmodels.employees WHERE (firstName LIKE '%h' AND LENGTH(firs
 SELECT * FROM classicmodels.employees WHERE reportsTo is NULL;
 
 -- 12. Write an SQL query to add column dob to employees table where default date is '1900-01-01'.
-
+ALTER TABLE employees ADD COLUMN dob date DEFAULT '1991-01-01';
 
 -- 13. Write an SQL query to update dob of employee to 1990-01-13 whose id is 1056.
-
+UPDATE employees set dob ='1990-01-13' WHERE employeeNumber =1056;
 
 -- 14. Write an SQL query to calculate age of employee with id 1056. use current_date() and year() function
 SELECT TIMESTAMPDIFF(YEAR, dob, CURDATE()) AS AGE FROM classicmodels.employees WHERE employeeNumber = 1056;
